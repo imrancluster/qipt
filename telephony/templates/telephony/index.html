@@ -1,0 +1,41 @@
+{% extends "telephony/base_site.html" %}
+{% block site_wrapper %}
+<div id="main">
+    <a href="#content" class="skip_link">Skip to main content</a>
+    <div id="banner">
+        <div class="bannerIEPadder">
+            <div class="cart_box">
+                [link to cart here]
+            </div>
+            Modern Musician
+        </div>
+    </div>
+    <div id="navigation">
+        <div class="navIEPadder">
+            [navigation here]
+        </div>
+    </div>
+    <div id="middle">
+        <div id="sidebar">
+            <div class="sidebarIEPadder">
+                [search box here]
+                <br />
+
+                <p>include "tags/category_list.html"</p>
+
+            </div>
+        </div>
+        <div id="content">
+            <a name=”content”></a>
+            <div class="contentIEPadder">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerIEPadder">
+            [footer here]
+        </div>
+    </div>
+</div>
+{% endblock %}

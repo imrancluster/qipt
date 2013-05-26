@@ -1,0 +1,12 @@
+{% extends "telephony/dashboard.html" %}
+
+{% block title %} {{ page_title }} {% endblock %}
+
+{% block content %}
+
+<p>Email send successfully.</p>
+
+<p><a href="{% url 'telephony:sendemail' %}">Email Send Again?</a></p>
+
+
+{% endblock %}

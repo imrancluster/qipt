@@ -1,0 +1,33 @@
+{% extends "telephony/main.html" %}
+
+{% block title %} {{ page_title }} {% endblock %}
+
+{% block content %}
+
+<div id="login_form">
+    <center>
+        <img src="{{STATIC_URL}}images/amd_no_gradient.png" alt="Login Form" />
+    </center>
+    <!--
+    <p>Your username / password did not match.</p>
+    -->
+    <p>{{ state }}</p>
+
+    <form action="/telephony/user_login/" method="post">
+        {% csrf_token %}
+        {% if next %}
+        <input type="hidden" name="next" value="{{ next }}" />
+        {% endif %}
+        <p><b>Username:</b> <input type="text" name="username" value="{{ username }}" /></p>
+        <p><b>Password:</b> <input type="password" name="password" value="" /></p>
+        <p><input type="submit" value="Login" /></p>
+    </form>
+    <center style="color:black;">
+        Developed by <a href="http://quantumos.com">Quantum OS Team</a>
+    </center>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,311 @@
+body{
+  background: url("../images/bg.jpg") repeat scroll 0 0 #333333;
+  color: #EEEEEE;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 22px;
+}
+
+body.login_form_bg{
+  background: url("../images/bg.jpg") repeat scroll 0 0 #333333;
+  color: #EEEEEE;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 15px;
+}
+
+body.twoColFixLtHdr{
+  color: #EEEEEE;
+  font-family: Arial,Helvetica,sans-serif;
+  font-weight: normal;
+  line-height: 22px;
+}
+
+.twoColFixLtHdr #container {
+  background: none repeat scroll 0 0 transparent;
+    margin: 0 auto;
+    text-align: left;
+    width: 998px;
+}
+
+#masthead.nosearch{
+   background: url("../images/masthead_nosearch.png") no-repeat scroll center top transparent;
+   height: 76px;
+   margin: 3px auto auto;
+   position: relative;
+   width: 998px;
+}
+
+#logo{
+  border: medium none;
+  float: left;
+  padding: 9px 0 0 9px;
+}
+
+.SecondaryNav_ns{
+  display: block;
+  float: right;
+  font-size: 10px;
+  left: 0;
+  margin-bottom: 11px;
+  margin-right: 22px;
+  position: relative;
+  text-align: right;
+  top: 18px;  
+}
+
+#PrimaryNav{
+  display: block;
+  float: right;
+  padding-left: 350px;
+  position: relative;
+  right: 16px;
+  text-align: right;
+  top: 9px;
+  z-index: 0;
+}
+
+body.twoColFixLtHdr a{
+  color: #EEEEEE;
+  font-family: Arial,Helvetica,sans-serif;
+  font-weight: normal;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.content_bg {
+  background-image: url("../images/main_bg_sprite.png");
+  background-repeat: repeat;
+  display: inline-block;
+  margin: 8px auto auto;
+  padding: 8px 8px 33px;
+  width: 976px;
+}
+
+.sitebar_first{
+  background-image: url("../images/content_bg_sprite.png");
+  background-repeat: repeat;
+  border: 1px solid #444444;
+  display: block;
+  height: 100%;
+  margin: 0 11px 20px 0;
+  text-align: left;
+  width: 187px;
+  float: left;
+}
+
+
+.content {
+  background: url("../images/content_bg_sprite.png") repeat scroll 0 0 transparent;
+  border: 1px solid #444444;
+  display: inline-block;
+  padding: 8px 11px;
+  width: 745px;
+}
+
+.admin_panel{
+  background: url("../images/content_bg_sprite.png") repeat scroll 0 0 transparent;
+  border: 1px solid #444444;
+  display: inline-block;
+  padding: 8px 11px;
+  width: 97.5%;  
+}
+
+
+.sitebar_second{
+  background: url("../images/content_bg_sprite.png") repeat scroll 0 0 transparent;
+  border: 1px solid #555555;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 177px;
+  float: right;
+}
+
+/**
+Login Form Start
+*/
+#login_form{
+  width: 310px;
+  background: #DBDBDB;
+  border: 1px solid white;
+  margin: 220px auto 0;
+  padding: 1em;
+  border-radius:3px;
+  box-shadow: 0 -2px 15px #9C9C9C;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+#login_form p {
+  color: #009D65;
+}
+
+h1,h2,h3,h4,h5 {
+  margin-top: 0px;
+  font-family: arial black, arial;
+  text-align: center;
+  color: green;
+}
+
+input[type=text], input[type=password]{
+  display: block;
+  margin: 0 0 1em 0;
+  width: 280px;
+  border: 5px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  padding: 0.7em;
+}
+
+.add_employee_form input[type=text], .add_employee_form input[type=password]{
+  margin: 0 0 .5em 0;
+  width: 200px;
+  border: 5px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  padding: .5em;
+  height: 10px;
+  font-size: 10px;
+}
+
+.employee_photo{
+  float: right;
+  margin-right: : 10px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid white;
+  padding: 5px;
+  margin-top: -10px;
+}
+
+fieldset{
+
+    border: 1px solid #D2D2D2;
+    float: left;
+    margin: 4px 0 0 1px;
+    padding: 0;
+    width: 100%;
+}
+
+input[type=submit], form a{
+  border: none;
+  margin-right: 1em;
+  padding: 6px;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius:3px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background: #009D65;
+  color: white;
+  -moz-box-shadow: 0 1px 0 white;
+}
+
+/**
+Login Form End
+*/
+
+
+/**
+Admin Panel
+*/
+
+#panel ul#main-menu {
+    background-color: #D5D5D5;
+    background-image: linear-gradient(#E0DFDB, #A6A6A6);
+}
+ul#main-menu {
+    border-bottom: 1px solid #888888;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0 10px;
+}
+.clearfix {
+    clear: both;
+}
+.radius-top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+ul#main-menu li {
+    float: left;
+    margin: 5px 4px 5px 0;
+}
+ul#main-menu li a:hover {
+    background: none repeat scroll 0 0 #F6F6F6;
+    text-decoration: none;
+    text-shadow: 0 1px 1px #F6F6F6;
+}
+ul#main-menu li a.active {
+    background: none repeat scroll 0 0 #FFFFFF;
+    text-shadow: 0 1px 1px #FFFFFF;
+}
+ul#main-menu li a {
+    background: linear-gradient(#EEEEEE, #CCCCCC) repeat scroll 0 0 #EEEEEE;
+    border-radius: 5px 5px 5px 5px;
+    color: #333333;
+    display: block;
+    font-weight: bold;
+    height: 80px;
+    line-height: 1px;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 1px 1px #EEEEEE;
+    width: 100px;
+	text-decoration:none;
+}
+ul#main-menu li a img {
+    height: 40px;
+    padding: 10px 15px 5px;
+    width: 40px;
+}
+ul#main-menu li a span {
+    display: block;
+    line-height: 20px;
+    padding: 0 0 5px;
+}
+
+.tcenter {
+    text-align: center;
+    float: right;
+}
+
+#details {
+    color: #FFFFFF;
+    float: right;
+    line-height: 18px;
+    margin-right: 12px;
+    margin-top: 17px;
+    width: 300px;
+}
+
+#details a.avatar {
+    background-color: #EEEEEE;
+    border: 1px solid #000000;
+    box-shadow: 0 0 4px #000000;
+    display: block;
+    float: right;
+    height: 36px;
+    margin: -3px 0 0 7px;
+    padding: 2px;
+    width: 36px;
+}
+
+#print_result{
+  margin-top: 150px;
+}
+
+@media print{
+  #employee_report{display: none;}
+  .sitebar_second{display: none;}
+  .admin_panel{display: none;}
+  #masthead{display: none;}
+  #employee_search_form{display: none}
+  .content {border: none;}
+  #power_by{display: none;}
+
+  #print_result{display: block; position: absolute; top: 0; margin-top: 0; width: 100%;}
+}

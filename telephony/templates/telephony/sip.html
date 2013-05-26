@@ -1,0 +1,15 @@
+{% extends "telephony/dashboard.html" %}
+
+{% block title %} {{ page_title }} {% endblock %}
+
+{% block content %}
+
+<p>SIP File</p>
+<textarea cols="100" id="id_message" name="message" rows="20">
+{% for sip in zone %}{{sip}}{% endfor %}
+</textarea>
+
+
+
+
+{% endblock %}

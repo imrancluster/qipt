@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% if page_title %}{{ page_title }} - {% endif %}
+        {{ site_name }}{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/style.css" type="text/css" />
+    <script type="text/javascript" src=""></script>
+    <link rel="stylesheet" href="{{STATIC_URL}}css/jquery-ui.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/style-table.css" />
+
+    <script src="{{STATIC_URL}}js/jquery-1.8.3.js"></script>
+    <script src="{{STATIC_URL}}js/jquery-ui.js"></script>
+    <script src="{{STATIC_URL}}js/country.js"></script>
+    <script src="{{STATIC_URL}}js/general.js"></script>
+    <script src="{{STATIC_URL}}js/application.js"></script>
+    <script src="{{STATIC_URL}}js/argiepolicarpio.js"></script>
+
+</head>
+<body class="twoColFixLtHdr">
+
+{% block site_wrapper %}
+
+<div id="container">
+    <div id="masthead" class="nosearch">
+        <div id="logo"><a href="{% url 'telephony:home' %}"><img src="{{STATIC_URL}}images/amd_no_gradient.png" alt="logo image" /></a></div>
+
+        <!-- if session user_id condition -->
+        <div id="details">
+
+            <a class="avatar" href="javascript: void(0)">
+                <img width="36" height="36" alt="Avatar" src="{{STATIC_URL}}.'profiles/thumbs/'.$this->session->userdata['profile'].'_thumb'.$this->session->userdata['profile_ext']; ?>" />
+            </a>
+
+            <div class="tcenter">
+                Hi
+                <strong>{{username}}</strong>
+                !
+                <br>
+                <a href="{% url 'telephony:logout' %}">Logout</a>
+            </div>
+        </div>
+        <!-- condition and login -->
+
+    </div>
+
+    <div class="content_bg">
+        <div class="admin_panel">
+            <div id="panel-outer" class="radius" style="opacity: 1;">
+                <div id="panel" class="radius">
+                    <ul class="radius-top clearfix" id="main-menu">
+                        <li>
+                            <a class="active" href="{% url 'telephony:home' %}">
+                                <img alt="Dashboard" src="{{STATIC_URL}}images/m-dashboard.png">
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'telephony:users' %}">
+                                <img alt="Users" src="{{STATIC_URL}}images/m-users.png">
+                                <span>Users</span>
+                                <span class="submenu-arrow"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'telephony:doc' %}">
+                                <img alt="User Guide" src="{{STATIC_URL}}images/m-articles.png">
+                                <span>User Guide</span>
+                                <span class="submenu-arrow"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'telephony:sendemail' %}">
+                                <img alt="Newsletter" src="{{STATIC_URL}}images/m-newsletter.png">
+                                <span>Email</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img alt="Statistics" src="{{STATIC_URL}}images/m-statistics.png">
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'telephony:search' %}">
+                                <img alt="Custom" src="{{STATIC_URL}}images/m-custom.png">
+                                <span>Search</span>
+                            </a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+
+        {% block content %}{% endblock %}
+
+        </div>
+
+        <div class="sitebar_second">
+            <a href="#"><b>User Information</b></a><br >
+            <a href="{% url 'telephony:logout' %}">Logout</a><br >
+            <a href="{% url 'telephony:adduser' %}">Add User</a><br >
+            <a href="{% url 'telephony:users' %}">All User</a><br >
+            <a href="{% url 'telephony:sip' %}">SIP File</a><br >
+        </div>
+
+    </div>
+    <center>
+        <div id="power_by">
+            Developed by <a href="http://quantumos.com">QuantOS Team</a>
+        </div>
+    </center>
+</div>
+
+
+{% endblock %}
+
+<script src="{{STATIC_URL}}js/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+        $(".delbutton").click(function(){
+//Save the link in a variable called element
+            var element = $(this);
+
+//Find the id of the link that was clicked
+            var del_id = element.attr("id");
+
+//Built a url to send
+            var info = 'id=' + del_id;
+            if(confirm("Sure you want to delete this update? There is NO undo!"))
+            {
+
+                $.ajax({
+                    type: "GET",
+                    url: "{{BASE_URL}}index.php/employees/delete_emp",
+                    data: info,
+                    success: function(){
+
+                    }
+                });
+                $(this).parents(".record").animate({ backgroundColor: "#fbc7c7" }, "fast")
+                        .animate({ opacity: "hide" }, "slow");
+
+            }
+
+            return false;
+
+        });
+
+//user delete from database
+        $(".deleteuser").click(function(){
+//Save the link in a variable called element
+            var element = $(this);
+
+//Find the id of the link that was clicked
+            var del_id = element.attr("id");
+
+//Built a url to send
+            var uid = del_id;
+            if(confirm("Sure you want to delete this update? There is NO undo!"))
+            {
+
+                $.ajax({
+                    type: "GET",
+                    url: "{{BASE_URL}}/telephony/user/"+ del_id + "/delete",
+                    data: uid,
+                    success: function(){
+
+                    }
+                });
+                $(this).parents(".record").animate({ backgroundColor: "#fbc7c7" }, "fast")
+                        .animate({ opacity: "hide" }, "slow");
+
+            }
+
+            return false;
+
+        });
+
+    });
+</script>
+</body>
+</html>

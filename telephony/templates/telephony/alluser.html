@@ -1,0 +1,63 @@
+{% extends "telephony/dashboard.html" %}
+
+{% block title %} {{ page_title }} {% endblock %}
+
+{% block content %}
+
+
+
+
+<label for="filter">Filter</label> <input type="text" name="filter" value="" id="filter" />
+<a style="float: right; margin: -40px 400px 0px 0px;" href="{% url 'telephony:adduser' %}">Add User</a>
+<a style="float: right; margin: -40px 295px 0px 0px;" href="{% url 'telephony:applyzone' %}"><b>Apply Zone</b></a>
+<table cellpadding="1" cellspacing="1" id="resultTable">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Bind</th>
+        <th>Secret</th>
+        <th>User</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Action</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for user in users %}
+
+    <tr class="record" id="">
+    <td><div align="right">{{user.created_at}}</div></td>
+    <td style="border-left: 1px solid #C1DAD7;">{{user.name}}</td>
+    <td><div align="right">{{user.bind}}</div></td>
+    <td><div align="right">{{user.secret}}</div></td>
+    <td><div align="right">{{user.user}}</div></td>
+    <td><div align="right">{{user.email}}</div></td>
+    <td><div align="right">{{user.mobile}}</div></td>
+    <td><div align="center"><a href="{% url 'telephony:deleteuser' user.id %}" style="color:green;" id="{{user.id}}" class="deleteuser" title="Click To Delete">del</a></div>
+    <div align="center"><a href="{% url 'telephony:edituser' user.id %}" style="color:green;" title="Click To Edit">Edit</a></div>
+    </td>
+    </tr>
+
+    {% endfor %}
+
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
