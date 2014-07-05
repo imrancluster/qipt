@@ -43,8 +43,6 @@ Note :
 =====
 Please don't click "SIP File" and "Apply Zone" link. Because It's a linux asteristik file that is not present here.
 
-This is my first small app. so don't mind If you see some problems. 
-
 --
 Thank You
 
